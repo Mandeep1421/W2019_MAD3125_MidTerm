@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.midtermmad3125.R;
@@ -20,6 +21,7 @@ public class MainCityActivity extends AppCompatActivity
     private TextView lon;
     private TextView code;
     private TextView population;
+    private Button details;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +37,10 @@ public class MainCityActivity extends AppCompatActivity
 
 
     }
-    public void weatherDetailsclick(View v){
-        Intent iIntend = new Intent(MainCityActivity.this,WeatherListActivity.class);
+    public void weatherDetailsclick(View v) {
+        Intent iIntend = new Intent(MainCityActivity.this, WeatherListActivity.class);
         startActivity(iIntend);
-
+    }
         public void getJsonData()
     {
         String JsonData = ReadJSONUtils.loadJSONFromAsset(this,"moscow_weather.json");
@@ -76,4 +78,5 @@ public class MainCityActivity extends AppCompatActivity
         }
 
     }
+}
 }
